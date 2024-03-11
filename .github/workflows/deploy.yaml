@@ -11,4 +11,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps: [uses: fastai/workflows/quarto-ghp@master]
+#    steps: [uses: fastai/workflows/quarto-ghp@master]
+    steps: 
+    - name: Use Node.js 20
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+    - uses: fastai/workflows/quarto-ghp@master
